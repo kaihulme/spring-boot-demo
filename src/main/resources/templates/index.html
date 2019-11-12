@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Spring Boot Demo</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+
+</head>
+
+<body>
+
+<!-- centre aligns row -->
+<div class="row justify-content-md-center">
+
+    <!-- uses 8 columns of 12 on row  -->
+    <div class="col-8">
+
+        <!-- creates container for table -->
+        <div class="container">
+            <!-- table title -->
+            <div class="row" id="title">
+                <h2>Users</h2>
+            </div>
+
+            <!-- user table -->
+            <table class="table table-striped table-hover" id="users">
+
+                <!-- table header -->
+                <thread>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thread>
+
+                <!-- table body -->
+                <tbody>
+                    <!-- for each user in model create a row in table-->
+                    <tr th:each="user : ${users}">
+                        <td><span th:text="${user.id}">id</span></td>
+                        <td><span th:text="${user.firstName}"> name</span></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery JS CDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+
+    </body>
+
+</html>
