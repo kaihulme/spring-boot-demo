@@ -17,13 +17,13 @@ import java.util.List;
 public class MainController{
 
     // new user data access object using new db connection
-    private UserDAO userDAO = new UserDbDAO(new DBConnection());
+//    private UserDAO userDAO = new UserDbDAO(new DBConnection());
 
     // mapping for '/' which adds all users to model as 'users'
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String index(Model m) {
-        List<User> users = userDAO.getAllUsers();
-        m.addAttribute("users", users);
+//        List<User> users = userDAO.getAllUsers();
+//        m.addAttribute("users", users);
         return "index";
     }
 
